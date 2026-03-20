@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur Hypothèque Québec 2025 – Paiement Mensuel Gratuit</title>
+  <meta name="description" content="Calculez votre paiement hypothécaire mensuel au Québec. Amortissement, assurance SCHL, tableau complet. Taux 2025, gratuit et instantané.">
+  <meta name="keywords" content="calculateur hypothèque québec, paiement hypothécaire, calcul prêt immobilier, assurance SCHL, amortissement québec 2025">
+  <meta property="og:title" content="Calculateur Hypothèque Québec 2025">
+  <meta property="og:description" content="Calculez votre paiement hypothécaire mensuel instantanément. Gratuit.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9586278174692187" crossorigin="anonymous"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f7f4ef;
+      --bg-white: #ffffff;
+      --bg-card: #ffffff;
+      --bg-subtle: #f0ece4;
+      --accent: #2a5298;
+      --accent-light: #e8eef8;
+      --accent-mid: #4a72b8;
+      --text: #1a1a2e;
+      --text-muted: #6b7280;
+      --text-dim: #9ca3af;
+      --border: rgba(0,0,0,0.08);
+      --border-accent: rgba(42,82,152,0.2);
+      --green: #059669;
+      --green-bg: #ecfdf5;
+      --red: #dc2626;
+      --amber: #d97706;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+      --shadow-md: 0 2px 8px rgba(0,0,0,0.08), 0 8px 32px rgba(0,0,0,0.06);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .page-wrap { max-width: 800px; margin: 0 auto; padding: 0 20px 80px; }
+
+    /* ── HEADER ── */
+    header {
+      padding: 60px 0 44px;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .header-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 18px;
+    }
+    .header-eyebrow::before {
+      content: '';
+      display: block; width: 24px; height: 2px;
+      background: var(--accent); border-radius: 99px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+
+    .header-sub { color: var(--text-muted); font-size: 16px; max-width: 540px; line-height: 1.7; }
+
+    /* ── AD SLOT ── */
+    .ad-slot {
+      background: var(--bg-white);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 13px;
+      margin-bottom: 28px;
+      min-height: 100px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ── MAIN GRID ── */
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+      animation: fadeUp 0.5s 0.1s ease both;
+    }
+    @media (max-width: 620px) { .main-grid { grid-template-columns: 1fr; } }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+    .card.full { grid-column: 1 / -1; }
+    .card.hero {
+      background: linear-gradient(135deg, #1e3a6e 0%, #2a5298 100%);
+      border: none;
+      color: white;
+    }
+
+    .card-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-dim);
+      margin-bottom: 20px;
+    }
+    .card.hero .card-label { color: rgba(255,255,255,0.6); }
+
+    /* ── INPUTS ── */
+    .field { margin-bottom: 18px; }
+    .field:last-child { margin-bottom: 0; }
+
+    .field-label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .field-val { font-weight: 600; color: var(--text); font-size: 14px; }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%; height: 4px;
+      background: var(--bg-subtle);
+      border-radius: 99px; outline: none; cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px var(--accent), var(--shadow);
+      cursor: pointer; transition: transform 0.15s;
+    }
+    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    input[type="range"]::-moz-range-thumb {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--accent); border: 3px solid white; cursor: pointer;
+    }
+
+    /* ── TOGGLE ── */
+    .toggle-group { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .tog {
+      font-size: 13px; font-family: 'Outfit', sans-serif;
+      padding: 6px 14px; border-radius: 99px;
+      border: 1px solid var(--border);
+      background: var(--bg-subtle);
+      color: var(--text-muted); cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tog:hover { border-color: var(--border-accent); color: var(--accent); }
+    .tog.active {
+      background: var(--accent-light);
+      border-color: var(--border-accent);
+      color: var(--accent); font-weight: 600;
+    }
+
+    /* ── HERO RESULT ── */
+    .hero-payment {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 4rem);
+      font-weight: 600; line-height: 1;
+      color: white; margin-bottom: 6px;
+    }
+    .hero-sub { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px; padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .hero-stat-label { font-size: 11px; color: rgba(255,255,255,0.55); margin-bottom: 4px; }
+    .hero-stat-val { font-size: 16px; font-weight: 600; color: white; }
+
+    /* ── SCHL BADGE ── */
+    .schl-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fff8e6; border: 1px solid #fcd34d;
+      color: #92400e; font-size: 12px; font-weight: 500;
+      padding: 5px 12px; border-radius: 99px;
+      margin-top: 12px;
+    }
+
+    /* ── BREAKDOWN ── */
+    .breakdown-list { display: flex; flex-direction: column; gap: 0; }
+    .bd-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .bd-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .bd-row.total { padding-top: 16px; font-weight: 600; }
+    .bd-name { color: var(--text-muted); }
+    .bd-name.strong { color: var(--text); font-weight: 600; }
+    .bd-amt { font-weight: 500; color: var(--text); }
+    .bd-amt.accent { color: var(--accent); font-weight: 600; }
+    .bd-amt.green { color: var(--green); }
+
+    /* ── BAR CHART ── */
+    .bar-section { margin-top: 4px; }
+    .bar-item { margin-bottom: 14px; }
+    .bar-top { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+    .bar-name { color: var(--text-muted); }
+    .bar-pct { font-weight: 600; color: var(--text); }
+    .bar-track { height: 6px; background: var(--bg-subtle); border-radius: 99px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 99px; transition: width 0.5s cubic-bezier(0.4,0,0.2,1); }
+
+    /* ── AMORTIZATION TABLE ── */
+    .amort-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      cursor: pointer; user-select: none;
+    }
+    .amort-toggle-label { font-size: 14px; font-weight: 500; color: var(--accent); }
+    .amort-arrow { font-size: 12px; color: var(--text-dim); transition: transform 0.2s; }
+    .amort-arrow.open { transform: rotate(180deg); }
+
+    .amort-wrap { margin-top: 16px; overflow-x: auto; display: none; }
+    .amort-wrap.open { display: block; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    thead th {
+      text-align: left; padding: 8px 12px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--text-dim);
+      border-bottom: 2px solid var(--border);
+    }
+    tbody tr:nth-child(even) { background: var(--bg-subtle); }
+    tbody td { padding: 9px 12px; color: var(--text-muted); }
+    tbody td:first-child { color: var(--text); font-weight: 500; }
+    tbody td:last-child { color: var(--green); font-weight: 500; }
+
+    /* ── SEO ── */
+    .seo-section {
+      margin-top: 52px; padding-top: 40px;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.5s 0.3s ease both;
+    }
+    .seo-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; font-weight: 600;
+      margin-bottom: 14px; color: var(--text);
+    }
+    .seo-section h3 { font-size: 1rem; font-weight: 600; color: var(--text); margin: 24px 0 8px; }
+    .seo-section p { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin-bottom: 12px; }
+
+    .seo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 500px) { .seo-grid { grid-template-columns: 1fr; } }
+    .seo-fact {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .seo-fact-label { font-size: 12px; color: var(--text-dim); margin-bottom: 4px; }
+    .seo-fact-val { font-size: 1.05rem; font-weight: 600; color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      margin-top: 60px; padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-note { font-size: 12px; color: var(--text-dim); }
+    .footer-badge {
+      font-size: 11px; color: var(--text-dim);
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 5px 12px; border-radius: 99px;
+      box-shadow: var(--shadow);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .ad-slot-mid { margin: 20px 0; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header>
+    <div class="header-eyebrow">Taux & règles 2025</div>
+    <h1>Calculateur <em>hypothécaire</em> Québec</h1>
+    <p class="header-sub">Estimez votre paiement mensuel, l'assurance SCHL et votre tableau d'amortissement complet — instantanément et gratuitement.</p>
+  </header>
+
+  <!-- PUB HAUT -->
+  <div class="ad-slot">
+    <span>Espace publicitaire – Google AdSense (728×90)</span>
+  </div>
+
+  <!-- RÉSULTAT HÉRO -->
+  <div class="card hero full" style="margin-bottom:20px; animation: fadeUp 0.5s 0.05s ease both;">
+    <div class="card-label">Votre paiement estimé</div>
+    <div class="hero-payment" id="hero-payment">–</div>
+    <div class="hero-sub" id="hero-freq">par mois</div>
+    <div id="schl-badge" class="schl-badge" style="display:none;">⚠️ Assurance SCHL incluse</div>
+    <div class="hero-grid">
+      <div>
+        <div class="hero-stat-label">Total intérêts</div>
+        <div class="hero-stat-val" id="h-interets">–</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">Coût total</div>
+        <div class="hero-stat-val" id="h-total">–</div>
+      </div>
+      <div>
+        <div class="hero-stat-label">Taux effectif</div>
+        <div class="hero-stat-val" id="h-taux">–</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRILLE PRINCIPALE -->
+  <div class="main-grid">
+
+    <!-- PARAMÈTRES -->
+    <div class="card">
+      <div class="card-label">Paramètres du prêt</div>
+
+      <div class="field">
+        <div class="field-label">
+          <span>Prix de la propriété</span>
+          <span class="field-val" id="prix-out">400 000 $</span>
+        </div>
+        <input type="range" id="prix" min="100000" max="2000000" step="5000" value="400000">
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          <span>Mise de fonds</span>
+          <span class="field-val" id="mdf-out">20 % – 80 000 $</span>
+        </div>
+        <input type="range" id="mdf-pct" min="5" max="50" step="1" value="20">
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          <span>Taux d'intérêt annuel</span>
+          <span class="field-val" id="taux-out">4,99 %</span>
+        </div>
+        <input type="range" id="taux" min="1" max="12" step="0.05" value="4.99">
+      </div>
+
+      <div class="field">
+        <div class="field-label">
+          <span>Amortissement</span>
+          <span class="field-val" id="amort-out">25 ans</span>
+        </div>
+        <input type="range" id="amort" min="5" max="30" step="5" value="25">
+      </div>
+
+      <div class="field">
+        <div style="font-size:13px; color:var(--text-muted); margin-bottom:8px;">Fréquence de paiement</div>
+        <div class="toggle-group">
+          <button class="tog active" id="freq-mo" onclick="setFreq('mensuel')">Mensuel</button>
+          <button class="tog" id="freq-bi" onclick="setFreq('bimensuel')">Aux 2 sem.</button>
+          <button class="tog" id="freq-wk" onclick="setFreq('hebdo')">Hebdo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VENTILATION -->
+    <div class="card">
+      <div class="card-label">Ventilation</div>
+      <div class="breakdown-list">
+        <div class="bd-row">
+          <span class="bd-name">Prix de la propriété</span>
+          <span class="bd-amt" id="b-prix">–</span>
+        </div>
+        <div class="bd-row">
+          <span class="bd-name">Mise de fonds</span>
+          <span class="bd-amt green" id="b-mdf">–</span>
+        </div>
+        <div class="bd-row">
+          <span class="bd-name">Montant hypothécaire</span>
+          <span class="bd-amt accent" id="b-hypo">–</span>
+        </div>
+        <div class="bd-row" id="schl-row">
+          <span class="bd-name">Prime SCHL</span>
+          <span class="bd-amt" id="b-schl" style="color:var(--amber);">–</span>
+        </div>
+        <div class="bd-row">
+          <span class="bd-name">Taux d'intérêt</span>
+          <span class="bd-amt" id="b-taux">–</span>
+        </div>
+        <div class="bd-row">
+          <span class="bd-name">Amortissement</span>
+          <span class="bd-amt" id="b-amort">–</span>
+        </div>
+        <div class="bd-row total">
+          <span class="bd-name strong">Paiement mensuel</span>
+          <span class="bd-amt accent" id="b-paiement">–</span>
+        </div>
+      </div>
+
+      <!-- BARRES -->
+      <div class="bar-section" style="margin-top:20px; padding-top:20px; border-top:1px solid var(--border);">
+        <div class="bar-item">
+          <div class="bar-top">
+            <span class="bar-name">Capital remboursé</span>
+            <span class="bar-pct" id="pct-capital">–</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" id="bar-capital" style="background:#2a5298;"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-top">
+            <span class="bar-name">Intérêts payés</span>
+            <span class="bar-pct" id="pct-interets">–</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" id="bar-interets" style="background:#dc2626;"></div></div>
+        </div>
+        <div class="bar-item" id="bar-schl-item" style="display:none;">
+          <div class="bar-top">
+            <span class="bar-name">Prime SCHL</span>
+            <span class="bar-pct" id="pct-schl">–</span>
+          </div>
+          <div class="bar-track"><div class="bar-fill" id="bar-schl" style="background:#d97706;"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PUB MILIEU -->
+  <div class="ad-slot ad-slot-mid">
+    <span>Espace publicitaire – Google AdSense (336×280)</span>
+  </div>
+
+  <!-- TABLEAU D'AMORTISSEMENT -->
+  <div class="card full" style="animation: fadeUp 0.5s 0.2s ease both;">
+    <div class="amort-toggle" onclick="toggleAmort()">
+      <div>
+        <div class="card-label" style="margin-bottom:4px;">Tableau d'amortissement</div>
+        <div class="amort-toggle-label">Voir année par année ↓</div>
+      </div>
+      <div class="amort-arrow" id="amort-arrow">▼</div>
+    </div>
+    <div class="amort-wrap" id="amort-wrap">
+      <table id="amort-table">
+        <thead>
+          <tr>
+            <th>Année</th>
+            <th>Paiements</th>
+            <th>Capital</th>
+            <th>Intérêts</th>
+            <th>Solde restant</th>
+          </tr>
+        </thead>
+        <tbody id="amort-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SEO -->
+  <section class="seo-section">
+    <h2>Guide hypothécaire Québec 2025</h2>
+    <p>Acheter une propriété au Québec implique de comprendre plusieurs règles financières importantes. Notre calculateur utilise les paramètres officiels de la SCHL et les règles hypothécaires en vigueur en 2025.</p>
+
+    <h3>L'assurance SCHL — quand est-elle obligatoire?</h3>
+    <p>Si votre mise de fonds est inférieure à 20 % du prix d'achat, vous êtes obligé de souscrire une assurance prêt hypothécaire auprès de la SCHL (Société canadienne d'hypothèques et de logement). La prime varie entre 2,8 % et 4 % du montant hypothécaire selon votre mise de fonds.</p>
+
+    <div class="seo-grid">
+      <div class="seo-fact">
+        <div class="seo-fact-label">Mise de fonds 5–9,99 %</div>
+        <div class="seo-fact-val">Prime SCHL : 4,00 %</div>
+      </div>
+      <div class="seo-fact">
+        <div class="seo-fact-label">Mise de fonds 10–14,99 %</div>
+        <div class="seo-fact-val">Prime SCHL : 3,10 %</div>
+      </div>
+      <div class="seo-fact">
+        <div class="seo-fact-label">Mise de fonds 15–19,99 %</div>
+        <div class="seo-fact-val">Prime SCHL : 2,80 %</div>
+      </div>
+      <div class="seo-fact">
+        <div class="seo-fact-label">Mise de fonds 20 % et plus</div>
+        <div class="seo-fact-val">Aucune assurance requise</div>
+      </div>
+    </div>
+
+    <h3>Amortissement maximal au Canada</h3>
+    <p>Depuis décembre 2024, les acheteurs d'une première propriété peuvent amortir leur prêt sur 30 ans (contre 25 ans auparavant) si la mise de fonds est inférieure à 20 %. Cette mesure vise à améliorer l'accessibilité à la propriété.</p>
+
+    <h3>Le test de résistance hypothécaire</h3>
+    <p>Au Canada, toutes les institutions financières doivent qualifier les acheteurs au taux contractuel + 2 % ou à 5,25 %, selon le plus élevé des deux. Ce test s'assure que vous pouvez absorber une hausse de taux sans mettre en danger vos finances.</p>
+
+    <h3>Conseils pour réduire votre paiement</h3>
+    <p>Augmenter votre mise de fonds au-delà de 20 % élimine la prime SCHL et réduit votre capital. Choisir des paiements accélérés aux deux semaines (26 paiements/an au lieu de 24) peut vous faire économiser des dizaines de milliers de dollars en intérêts sur la durée du prêt.</p>
+  </section>
+
+  <!-- PUB BAS -->
+  <div class="ad-slot" style="margin-top:32px; min-height:250px;">
+    <span>Espace publicitaire – Google AdSense (300×250)</span>
+  </div>
+
+  <footer>
+    <div class="footer-note">Calculs à titre indicatif seulement. Consultez un courtier hypothécaire pour votre situation personnelle. Taux et règles SCHL en vigueur en 2025.</div>
+    <div class="footer-badge">Mis à jour : Janvier 2025</div>
+  </footer>
+
+</div>
+
+<script>
+  let freq = 'mensuel';
+
+  function setFreq(f) {
+    freq = f;
+    ['mo','bi','wk'].forEach(x => document.getElementById('freq-'+x).className='tog');
+    const map = {mensuel:'mo',bimensuel:'bi',hebdo:'wk'};
+    document.getElementById('freq-'+map[f]).className='tog active';
+    calc();
+  }
+
+  function toggleAmort() {
+    const wrap = document.getElementById('amort-wrap');
+    const arrow = document.getElementById('amort-arrow');
+    wrap.classList.toggle('open');
+    arrow.classList.toggle('open');
+  }
+
+  const fmt = n => n.toLocaleString('fr-CA', {style:'currency', currency:'CAD', maximumFractionDigits:0});
+  const fmtDec = n => n.toLocaleString('fr-CA', {style:'currency', currency:'CAD', minimumFractionDigits:2, maximumFractionDigits:2});
+
+  function schlPrime(pct) {
+    if (pct >= 20) return 0;
+    if (pct >= 15) return 0.028;
+    if (pct >= 10) return 0.031;
+    return 0.04;
+  }
+
+  function calcPayment(principal, annualRate, years, paymentsPerYear) {
+    const r = annualRate / 100 / paymentsPerYear;
+    const n = years * paymentsPerYear;
+    if (r === 0) return principal / n;
+    return principal * r * Math.pow(1+r, n) / (Math.pow(1+r, n) - 1);
+  }
+
+  function calc() {
+    const prix = parseInt(document.getElementById('prix').value);
+    const mdfPct = parseInt(document.getElementById('mdf-pct').value);
+    const tauxVal = parseFloat(document.getElementById('taux').value);
+    const amortYears = parseInt(document.getElementById('amort').value);
+
+    const mdf = Math.round(prix * mdfPct / 100);
+    const principal = prix - mdf;
+    const primeRate = schlPrime(mdfPct);
+    const primeMontant = Math.round(principal * primeRate);
+    const totalPrincipal = principal + primeMontant;
+
+    let ppy = 12, freqLabel = 'par mois', freqLabelCourt = 'mensuel';
+    if (freq === 'bimensuel') { ppy = 26; freqLabel = 'aux 2 semaines'; freqLabelCourt = 'bimensuel'; }
+    if (freq === 'hebdo') { ppy = 52; freqLabel = 'par semaine'; freqLabelCourt = 'hebdomadaire'; }
+
+    const payment = calcPayment(totalPrincipal, tauxVal, amortYears, ppy);
+    const totalPaye = payment * ppy * amortYears;
+    const totalInterets = totalPaye - totalPrincipal;
+    const tauxEff = (tauxVal).toFixed(2);
+
+    // Update displays
+    document.getElementById('prix-out').textContent = fmt(prix);
+    document.getElementById('mdf-out').textContent = mdfPct + ' % – ' + fmt(mdf);
+    document.getElementById('taux-out').textContent = tauxVal.toFixed(2).replace('.',',') + ' %';
+    document.getElementById('amort-out').textContent = amortYears + ' ans';
+
+    document.getElementById('hero-payment').textContent = fmtDec(payment);
+    document.getElementById('hero-freq').textContent = freqLabel;
+    document.getElementById('h-interets').textContent = fmt(totalInterets);
+    document.getElementById('h-total').textContent = fmt(totalPaye);
+    document.getElementById('h-taux').textContent = tauxVal.toFixed(2).replace('.',',') + ' %';
+
+    // SCHL
+    const hasSchl = primeRate > 0;
+    document.getElementById('schl-badge').style.display = hasSchl ? 'inline-flex' : 'none';
+    document.getElementById('schl-row').style.display = hasSchl ? '' : 'none';
+    document.getElementById('bar-schl-item').style.display = hasSchl ? '' : 'none';
+    document.getElementById('b-schl').textContent = hasSchl ? fmt(primeMontant) : 'N/A';
+
+    document.getElementById('b-prix').textContent = fmt(prix);
+    document.getElementById('b-mdf').textContent = '– ' + fmt(mdf);
+    document.getElementById('b-hypo').textContent = fmt(principal);
+    document.getElementById('b-taux').textContent = tauxVal.toFixed(2).replace('.',',') + ' %';
+    document.getElementById('b-amort').textContent = amortYears + ' ans';
+    document.getElementById('b-paiement').textContent = fmtDec(payment);
+
+    // Barres
+    const totalCost = totalPrincipal + totalInterets + (hasSchl ? primeMontant : 0);
+    const pCapital = (totalPrincipal / (totalPrincipal + totalInterets) * 100).toFixed(1);
+    const pInterets = (totalInterets / (totalPrincipal + totalInterets) * 100).toFixed(1);
+    const pSchl = hasSchl ? (primeMontant / totalPrincipal * 100).toFixed(1) : '0';
+
+    document.getElementById('bar-capital').style.width = pCapital + '%';
+    document.getElementById('bar-interets').style.width = pInterets + '%';
+    document.getElementById('bar-schl').style.width = pSchl + '%';
+    document.getElementById('pct-capital').textContent = pCapital + ' %';
+    document.getElementById('pct-interets').textContent = pInterets + ' %';
+    document.getElementById('pct-schl').textContent = pSchl + ' %';
+
+    // Tableau amortissement
+    const tbody = document.getElementById('amort-body');
+    tbody.innerHTML = '';
+    let solde = totalPrincipal;
+    const monthlyRate = tauxVal / 100 / 12;
+    const monthlyPayment = calcPayment(totalPrincipal, tauxVal, amortYears, 12);
+
+    for (let yr = 1; yr <= amortYears; yr++) {
+      let capitalAn = 0, interetsAn = 0;
+      for (let m = 0; m < 12; m++) {
+        const intMonth = solde * monthlyRate;
+        const capMonth = monthlyPayment - intMonth;
+        interetsAn += intMonth;
+        capitalAn += capMonth;
+        solde -= capMonth;
+        if (solde < 0) solde = 0;
+      }
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>Année ${yr}</td>
+        <td>${fmt(monthlyPayment * 12)}</td>
+        <td>${fmt(capitalAn)}</td>
+        <td>${fmt(interetsAn)}</td>
+        <td>${fmt(Math.max(0, solde))}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+
+  ['prix','mdf-pct','taux','amort'].forEach(id => {
+    document.getElementById(id).addEventListener('input', calc);
+  });
+  calc();
+</script>
+</body>
+</html>
